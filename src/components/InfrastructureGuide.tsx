@@ -4,7 +4,7 @@ import { HOSTING_GUIDE } from '../data/content';
 
 export default function InfrastructureGuide() {
   return (
-    <section id="hosting" className="py-16 md:py-24 border-b-2 border-zinc-900 dark:border-zinc-800 bg-white dark:bg-zinc-950 transition-colors">
+    <section id="hosting" className="scroll-mt-20 py-16 md:py-24 border-b-2 border-zinc-900 dark:border-zinc-800 bg-white dark:bg-zinc-950 transition-colors">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mb-14">

@@ -4,7 +4,7 @@ import { DOMAIN_SECURITY_GUIDE } from '../data/content';
 
 export default function DomainSecurity() {
   return (
-    <section id="security" className="py-16 md:py-24 border-b-2 border-zinc-900 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-900/40 transition-colors">
+    <section id="security" className="scroll-mt-20 py-16 md:py-24 border-b-2 border-zinc-900 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-900/40 transition-colors">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mb-14">

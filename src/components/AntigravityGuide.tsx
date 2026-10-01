@@ -60,7 +60,7 @@ export default function AntigravityGuide() {
   const activeFeature = features.find((f) => f.id === activeTab)!;
 
   return (
-    <section id="antigravity" className="py-16 md:py-24 border-b-2 border-zinc-900 dark:border-zinc-800 bg-white dark:bg-zinc-950 transition-colors">
+    <section id="antigravity" className="scroll-mt-20 py-16 md:py-24 border-b-2 border-zinc-900 dark:border-zinc-800 bg-white dark:bg-zinc-950 transition-colors">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mb-12">
