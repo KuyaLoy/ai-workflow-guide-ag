@@ -3,11 +3,15 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-mono: "JetBrains Mono", "Fira Code", monospace;
+  --font-pixel: "Press Start 2P", monospace;
+  --font-arcade: "Silkscreen", monospace;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-sans: "Inter", sans-serif;
 
-  --color-border: #e4e4e7;
-  --color-border-dark: #27272a;
+  --color-arcade-green: #00ff66;
+  --color-arcade-cyan: #00e5ff;
+  --color-arcade-yellow: #ffea00;
+  --color-arcade-magenta: #ff007f;
 }
 
 @layer base {
@@ -18,8 +22,91 @@
   body {
     margin: 0;
     padding: 0;
-    font-family: var(--font-sans);
+    font-family: "JetBrains Mono", monospace;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+}
+
+/* 16-bit Retro Pixel Design System */
+.font-pixel {
+  font-family: "Press Start 2P", monospace;
+}
+
+.font-arcade {
+  font-family: "Silkscreen", monospace;
+}
+
+/* Chunky Pixel Card Border & Shadow */
+.pixel-panel {
+  border: 2px solid;
+  border-color: #27272a;
+  box-shadow: 4px 4px 0px 0px #000000;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.dark .pixel-panel {
+  border-color: #3f3f46;
+  box-shadow: 4px 4px 0px 0px #000000;
+}
+
+.pixel-panel:hover {
+  border-color: #71717a;
+}
+
+.dark .pixel-panel:hover {
+  border-color: #a1a1aa;
+}
+
+/* Chunky 3D Arcade Push Button */
+.pixel-btn {
+  border: 2px solid #000000;
+  box-shadow: 3px 3px 0px 0px #000000;
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+}
+
+.dark .pixel-btn {
+  border-color: #000000;
+  box-shadow: 3px 3px 0px 0px #000000;
+}
+
+.pixel-btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0px 0px #000000;
+}
+
+.pixel-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px 0px #000000;
+}
+
+/* Pixel Badge */
+.pixel-badge {
+  border: 1px solid currentColor;
+  box-shadow: 2px 2px 0px 0px #000000;
+}
+
+/* Retro CRT Grid Background */
+.pixel-grid {
+  background-size: 24px 24px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+}
+
+.dark .pixel-grid {
+  background-size: 28px 28px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+}
+
+/* Subtle CRT Scanline overlay */
+.crt-overlay {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.15) 50%
+  );
+  background-size: 100% 4px;
+  pointer-events: none;
 }

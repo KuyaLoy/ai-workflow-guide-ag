@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Cpu, Bot, GitBranch, Terminal, ShieldCheck, Eye, Sparkles } from 'lucide-react';
+import { PixelComputer, PixelTerminal, PixelJoystick, PixelShield } from './PixelIcons';
+import { Check } from 'lucide-react';
 
 export default function AntigravityGuide() {
   const [activeTab, setActiveTab] = useState<'manager' | 'subagents' | 'mcp' | 'verification'>('subagents');
@@ -8,22 +9,20 @@ export default function AntigravityGuide() {
   const features = [
     {
       id: 'subagents',
-      title: 'Autonomous Subagents',
-      icon: Bot,
-      badge: 'Context Isolation',
+      title: 'AUTONOMOUS SUBAGENTS',
+      badge: 'PARALLEL SWARM',
       desc: 'Antigravity delegates work to specialized subagents (Frontend Specialist, Database Architect, Debugger) running in parallel. This prevents context rot and stops the AI from hallucinating or overwriting working code.',
       highlights: [
         'Isolated context windows for each domain',
-        'Independent worktree branching',
+        'Independent git worktree branching',
         'Zero pollution of the main chat memory',
         'Parallel research and multi-file builds'
       ]
     },
     {
       id: 'manager',
-      title: 'Mission Control vs Editor View',
-      icon: Cpu,
-      badge: 'Dual-View Architecture',
+      title: 'MISSION CONTROL VS EDITOR',
+      badge: 'DUAL-VIEW ENGINE',
       desc: 'Antigravity separates high-level agent direction from low-level line-by-line coding. Use Mission Control (Manager View) to direct autonomous swarms, and switch to Editor View when you want surgical manual control.',
       highlights: [
         'Mission Control for roadmap orchestration',
@@ -34,9 +33,8 @@ export default function AntigravityGuide() {
     },
     {
       id: 'mcp',
-      title: 'Model Context Protocol (MCP)',
-      icon: GitBranch,
-      badge: 'Live External Tooling',
+      title: 'MODEL CONTEXT PROTOCOL (MCP)',
+      badge: 'LIVE TOOL PROTOCOL',
       desc: 'Connect the AI directly to your tools. With MCP servers like GitHub MCP and Database MCP, Antigravity reads issues, creates pull requests, queries databases, and commits changes without manual intervention.',
       highlights: [
         'GitHub MCP for pushing branches & PRs',
@@ -47,9 +45,8 @@ export default function AntigravityGuide() {
     },
     {
       id: 'verification',
-      title: 'Automated Browser & DOM Verification',
-      icon: Eye,
-      badge: 'Evidence Over Assertions',
+      title: 'HEADLESS BROWSER VERIFICATION',
+      badge: 'EVIDENCE FIRST',
       desc: 'Antigravity doesn’t just guess that the UI looks good—it opens headless browsers, inspects computed CSS, checks console errors, and verifies DOM elements against DESIGN.md tokens before marking tasks complete.',
       highlights: [
         'Headless Chromium page inspection',
@@ -63,18 +60,18 @@ export default function AntigravityGuide() {
   const activeFeature = features.find((f) => f.id === activeTab)!;
 
   return (
-    <section id="antigravity" className="py-16 md:py-24 border-b border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 transition-colors">
+    <section id="antigravity" className="py-16 md:py-24 border-b-2 border-zinc-900 dark:border-zinc-800 bg-white dark:bg-zinc-950 transition-colors">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mb-12">
-          <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-blue-600 dark:text-blue-400 font-semibold mb-3">
-            <Sparkles className="w-4 h-4" />
-            <span>Google Antigravity & Gemini 3 Deep Dive</span>
+          <div className="inline-flex items-center gap-2 font-pixel text-[10px] text-emerald-600 dark:text-emerald-400 mb-3 px-2 py-1 border border-emerald-500/60 bg-emerald-500/10">
+            <PixelComputer className="w-3.5 h-3.5" />
+            <span>STAGE 2: GOOGLE ANTIGRAVITY ENGINE</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 mb-4">
-            How Google Antigravity Changes Vibe Coding Forever
+          <h2 className="text-2xl sm:text-4xl font-pixel tracking-tight text-zinc-950 dark:text-zinc-50 mb-4 leading-relaxed">
+            GOOGLE ANTIGRAVITY OS
           </h2>
-          <p className="text-base text-zinc-600 dark:text-zinc-400 leading-relaxed">
+          <p className="font-mono text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
             Most AI coding tools are just smart autocomplete or single-threaded chat wrappers. <strong>Google Antigravity</strong> is an <em>agent-first operating system</em> designed to coordinate autonomous AI specialists like a real engineering team.
           </p>
         </div>
@@ -84,34 +81,33 @@ export default function AntigravityGuide() {
           {/* Tab Navigation */}
           <div className="lg:col-span-5 space-y-3">
             {features.map((feature) => {
-              const Icon = feature.icon;
               const isSelected = activeTab === feature.id;
               return (
                 <button
                   key={feature.id}
                   onClick={() => setActiveTab(feature.id as any)}
-                  className={`w-full text-left p-4 rounded-xl border transition-all flex items-start gap-4 ${
+                  className={`w-full text-left p-4 pixel-panel transition-all flex items-start gap-4 ${
                     isSelected
-                      ? 'border-blue-500/80 bg-blue-50/50 dark:bg-blue-950/20 text-zinc-900 dark:text-zinc-100 shadow-xs'
-                      : 'border-zinc-200 dark:border-zinc-800/80 bg-zinc-50/40 dark:bg-zinc-900/40 text-zinc-600 dark:text-zinc-400 hover:border-zinc-300 dark:hover:border-zinc-700'
+                      ? 'bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-950'
+                      : 'bg-white dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300'
                   }`}
                 >
                   <div
-                    className={`w-10 h-10 rounded-lg flex items-center justify-center shrink-0 transition-colors ${
+                    className={`w-8 h-8 flex items-center justify-center shrink-0 border ${
                       isSelected
-                        ? 'bg-blue-600 text-white'
-                        : 'bg-zinc-200 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300'
+                        ? 'border-emerald-400 bg-emerald-500 text-black'
+                        : 'border-zinc-400 dark:border-zinc-700 bg-zinc-100 dark:bg-zinc-800'
                     }`}
                   >
-                    <Icon className="w-5 h-5" />
+                    <PixelJoystick className="w-4 h-4" />
                   </div>
                   <div>
-                    <div className="flex items-center gap-2 mb-1">
-                      <h3 className="font-bold text-sm text-zinc-900 dark:text-zinc-100">
-                        {feature.title}
-                      </h3>
-                    </div>
-                    <p className="text-xs text-zinc-500 dark:text-zinc-400 line-clamp-2 leading-relaxed">
+                    <h3 className="font-arcade text-xs font-bold uppercase mb-1">
+                      {feature.title}
+                    </h3>
+                    <p className={`font-mono text-[11px] line-clamp-2 leading-relaxed ${
+                      isSelected ? 'text-zinc-300 dark:text-zinc-700' : 'text-zinc-500 dark:text-zinc-400'
+                    }`}>
                       {feature.desc}
                     </p>
                   </div>
@@ -120,7 +116,7 @@ export default function AntigravityGuide() {
             })}
           </div>
 
-          {/* Tab Content Display with Framer Motion */}
+          {/* Active Tab Panel */}
           <div className="lg:col-span-7">
             <AnimatePresence mode="wait">
               <motion.div
@@ -129,48 +125,48 @@ export default function AntigravityGuide() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.2 }}
-                className="p-6 sm:p-8 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900/80 shadow-xs"
+                className="pixel-panel p-6 sm:p-8 bg-zinc-50 dark:bg-zinc-900"
               >
-                <div className="flex items-center justify-between mb-4 pb-4 border-b border-zinc-200 dark:border-zinc-800">
+                <div className="flex items-center justify-between mb-4 pb-4 border-b-2 border-zinc-200 dark:border-zinc-800">
                   <div className="flex items-center gap-3">
-                    <div className="p-2 rounded-lg bg-blue-100 dark:bg-blue-950 text-blue-600 dark:text-blue-400">
-                      <activeFeature.icon className="w-6 h-6" />
+                    <div className="p-2 border border-black bg-emerald-500 text-black shadow-[2px_2px_0px_#000]">
+                      <PixelComputer className="w-5 h-5" />
                     </div>
                     <div>
-                      <h4 className="text-lg font-bold text-zinc-900 dark:text-zinc-100">
+                      <h4 className="font-arcade text-base sm:text-lg font-bold text-zinc-900 dark:text-zinc-100 uppercase">
                         {activeFeature.title}
                       </h4>
-                      <span className="text-xs font-mono text-blue-600 dark:text-blue-400 font-medium">
-                        {activeFeature.badge}
+                      <span className="font-pixel text-[9px] text-emerald-600 dark:text-emerald-400 font-medium">
+                        [{activeFeature.badge}]
                       </span>
                     </div>
                   </div>
                 </div>
 
-                <p className="text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed mb-6">
+                <p className="font-mono text-xs sm:text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed mb-6">
                   {activeFeature.desc}
                 </p>
 
-                <div className="space-y-2.5">
-                  <h5 className="text-xs font-mono uppercase tracking-wider text-zinc-500 dark:text-zinc-400 font-semibold mb-2">
-                    Key Capabilities & Advantages:
-                  </h5>
+                <div className="space-y-2">
+                  <div className="font-arcade text-xs font-bold text-zinc-500 dark:text-zinc-400 uppercase tracking-wider mb-2">
+                    CORE SYSTEM ABILITIES:
+                  </div>
                   {activeFeature.highlights.map((highlight, idx) => (
                     <div
                       key={idx}
-                      className="flex items-center gap-2.5 text-xs text-zinc-800 dark:text-zinc-200 p-2.5 rounded-lg bg-white dark:bg-zinc-950 border border-zinc-200/80 dark:border-zinc-800"
+                      className="flex items-center gap-2.5 font-mono text-xs text-zinc-800 dark:text-zinc-200 p-2.5 border border-zinc-300 dark:border-zinc-800 bg-white dark:bg-zinc-950"
                     >
-                      <ShieldCheck className="w-4 h-4 text-emerald-500 shrink-0" />
+                      <Check className="w-4 h-4 text-emerald-500 shrink-0" />
                       <span>{highlight}</span>
                     </div>
                   ))}
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-zinc-200 dark:border-zinc-800 flex items-center justify-between text-xs text-zinc-500 dark:text-zinc-400 font-mono">
-                  <span>Powered by Google Gemini 3</span>
-                  <span className="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400 font-medium">
-                    <Terminal className="w-3.5 h-3.5" />
-                    Antigravity 2.0 Ready
+                <div className="mt-6 pt-4 border-t-2 border-zinc-200 dark:border-zinc-800 flex items-center justify-between font-pixel text-[9px] text-zinc-500 dark:text-zinc-400">
+                  <span>GEMINI 3 CORE</span>
+                  <span className="text-emerald-500 flex items-center gap-1 font-bold">
+                    <PixelShield className="w-3.5 h-3.5" />
+                    16-BIT READY
                   </span>
                 </div>
               </motion.div>

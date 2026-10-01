@@ -1,20 +1,21 @@
-import { Server, Zap, AlertTriangle, ShieldCheck, DollarSign, Terminal, Check } from 'lucide-react';
+import { PixelComputer, PixelTerminal } from './PixelIcons';
+import { Server, Zap, AlertTriangle, Check } from 'lucide-react';
 import { HOSTING_GUIDE } from '../data/content';
 
 export default function InfrastructureGuide() {
   return (
-    <section id="hosting" className="py-16 md:py-24 border-b border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 transition-colors">
+    <section id="hosting" className="py-16 md:py-24 border-b-2 border-zinc-900 dark:border-zinc-800 bg-white dark:bg-zinc-950 transition-colors">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mb-14">
-          <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-blue-600 dark:text-blue-400 font-semibold mb-3">
-            <Server className="w-4 h-4" />
-            <span>Infrastructure & Deployment Mastery</span>
+          <div className="inline-flex items-center gap-2 font-pixel text-[10px] text-emerald-600 dark:text-emerald-400 mb-3 px-2 py-1 border border-emerald-500/60 bg-emerald-500/10">
+            <Server className="w-3.5 h-3.5" />
+            <span>STAGE 5: INFRASTRUCTURE & VPS GUIDE</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 mb-4">
-            Where to Host: VPS vs Serverless vs cPanel
+          <h2 className="text-2xl sm:text-4xl font-pixel tracking-tight text-zinc-950 dark:text-zinc-50 mb-4 leading-relaxed">
+            VPS VS SERVERLESS VS CPANEL
           </h2>
-          <p className="text-base text-zinc-600 dark:text-zinc-400 leading-relaxed">
+          <p className="font-mono text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
             Beginners often fall into two extremes: either paying \$0 on Vercel until an unexpected bot attack triggers a \$1,200 bandwidth bill, or struggling with slow, broken \$3/month shared cPanel hosts. Here is the honest truth about server infrastructure.
           </p>
         </div>
@@ -24,46 +25,46 @@ export default function InfrastructureGuide() {
           {HOSTING_GUIDE.map((option, idx) => (
             <div
               key={idx}
-              className={`p-6 sm:p-7 rounded-2xl border transition-colors flex flex-col justify-between ${
+              className={`pixel-panel p-6 sm:p-7 flex flex-col justify-between ${
                 option.verdict === 'Recommended'
-                  ? 'border-blue-500/80 bg-blue-50/20 dark:bg-blue-950/10 shadow-xs'
-                  : 'border-zinc-200 dark:border-zinc-800 bg-zinc-50/40 dark:bg-zinc-900/40'
+                  ? 'bg-blue-50/30 dark:bg-blue-950/20 border-blue-500'
+                  : 'bg-zinc-50 dark:bg-zinc-900'
               }`}
             >
               <div>
                 <div className="flex items-center justify-between gap-4 mb-3">
                   <span
-                    className={`text-xs font-mono font-semibold px-2.5 py-0.5 rounded-full ${
+                    className={`font-pixel text-[9px] px-2 py-0.5 border ${
                       option.verdict === 'Recommended'
-                        ? 'bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200'
+                        ? 'border-blue-500 bg-blue-500/10 text-blue-600 dark:text-blue-400 font-bold'
                         : option.verdict === 'Legacy Only'
-                        ? 'bg-red-100 dark:bg-red-950 text-red-700 dark:text-red-300'
-                        : 'bg-zinc-200 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300'
+                        ? 'border-red-500 bg-red-500/10 text-red-600 dark:text-red-400 font-bold'
+                        : 'border-zinc-500 bg-zinc-500/10 text-zinc-700 dark:text-zinc-300 font-bold'
                     }`}
                   >
-                    {option.verdict}
+                    [{option.verdict}]
                   </span>
-                  <span className="text-sm font-bold font-mono text-zinc-900 dark:text-zinc-100">
+                  <span className="font-pixel text-xs text-emerald-600 dark:text-emerald-400">
                     {option.cost}
                   </span>
                 </div>
 
-                <h3 className="text-xl font-bold text-zinc-900 dark:text-zinc-100 mb-2">
+                <h3 className="font-arcade text-lg sm:text-xl font-bold uppercase text-zinc-900 dark:text-zinc-100 mb-2">
                   {option.type}
                 </h3>
-                <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4">
+                <p className="font-mono text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4">
                   {option.summary}
                 </p>
 
-                <div className="text-xs font-semibold text-zinc-700 dark:text-zinc-300 mb-2">
-                  Best For: <span className="font-normal text-zinc-500">{option.bestFor}</span>
+                <div className="font-mono text-xs text-zinc-700 dark:text-zinc-300 mb-4 pb-3 border-b border-zinc-200 dark:border-zinc-800">
+                  <strong className="font-arcade uppercase">BEST FOR:</strong> <span className="text-zinc-500">{option.bestFor}</span>
                 </div>
 
                 {/* Pros and Cons */}
-                <div className="space-y-3 mt-4 text-xs">
+                <div className="space-y-3 font-mono text-xs">
                   <div>
-                    <span className="font-semibold text-emerald-700 dark:text-emerald-400 block mb-1">
-                      Strengths:
+                    <span className="font-arcade text-xs uppercase text-emerald-600 dark:text-emerald-400 block mb-1">
+                      KEY STRENGTHS:
                     </span>
                     <ul className="space-y-1">
                       {option.pros.map((pro, i) => (
@@ -76,8 +77,8 @@ export default function InfrastructureGuide() {
                   </div>
 
                   <div>
-                    <span className="font-semibold text-amber-700 dark:text-amber-400 block mb-1">
-                      Trade-offs & Warnings:
+                    <span className="font-arcade text-xs uppercase text-amber-600 dark:text-amber-400 block mb-1">
+                      TRADE-OFFS & TRAPS:
                     </span>
                     <ul className="space-y-1">
                       {option.cons.map((con, i) => (
@@ -92,9 +93,9 @@ export default function InfrastructureGuide() {
               </div>
 
               {option.secretWeapon && (
-                <div className="mt-6 pt-4 border-t border-zinc-200 dark:border-zinc-800 text-xs text-zinc-700 dark:text-zinc-300">
-                  <strong className="text-blue-600 dark:text-blue-400 font-semibold block mb-0.5">
-                    Secret Weapon:
+                <div className="mt-6 pt-4 border-t-2 border-zinc-200 dark:border-zinc-800 font-mono text-xs">
+                  <strong className="font-arcade uppercase text-blue-600 dark:text-blue-400 block mb-0.5">
+                    SECRET WEAPON:
                   </strong>
                   {option.secretWeapon}
                 </div>
@@ -103,28 +104,28 @@ export default function InfrastructureGuide() {
           ))}
         </div>
 
-        {/* Coolify 1-Line Setup Callout */}
-        <div className="p-6 sm:p-8 rounded-2xl border border-blue-200 dark:border-blue-900/60 bg-blue-50/40 dark:bg-blue-950/20">
+        {/* Coolify Setup Box */}
+        <div className="pixel-panel p-6 sm:p-8 bg-zinc-900 text-white border-2 border-black shadow-[4px_4px_0px_#000]">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="max-w-xl">
-              <div className="inline-flex items-center gap-1.5 text-xs font-mono text-blue-600 dark:text-blue-400 font-semibold mb-2">
+              <div className="inline-flex items-center gap-1.5 font-pixel text-[10px] text-emerald-400 mb-2">
                 <Zap className="w-4 h-4" />
                 <span>THE $5/MO VERCEL ALTERNATIVE</span>
               </div>
-              <h4 className="text-lg font-bold text-zinc-900 dark:text-zinc-100 mb-2">
-                Deploying Coolify on a Hetzner or DigitalOcean VPS
+              <h4 className="font-arcade text-lg sm:text-xl font-bold uppercase mb-2">
+                Deploy Coolify on a $4.20/mo Hetzner VPS
               </h4>
-              <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
+              <p className="font-mono text-xs text-zinc-300 leading-relaxed">
                 Spin up a clean Ubuntu 24.04 server on Hetzner (~$4.20/mo) or DigitalOcean ($6/mo). Run this single command in your terminal to install Coolify. In 5 minutes, you will have your own private Vercel clone with Git push deployments, free Let's Encrypt SSL, and one-click PostgreSQL databases.
               </p>
             </div>
 
             <div className="w-full md:w-auto">
-              <div className="p-3 rounded-xl bg-zinc-900 text-zinc-100 font-mono text-xs overflow-x-auto shadow-md">
+              <div className="p-3 border-2 border-emerald-500 bg-black font-mono text-xs text-emerald-400 overflow-x-auto shadow-[3px_3px_0px_#000]">
                 <code>curl -fsSL https://cdn.coolify.io/coolify/install.sh | bash</code>
               </div>
-              <span className="block text-[11px] text-zinc-500 font-mono mt-2 text-right">
-                100% Free & Open Source
+              <span className="block font-pixel text-[9px] text-zinc-400 mt-2 text-right">
+                [100% FREE & OPEN SOURCE]
               </span>
             </div>
           </div>

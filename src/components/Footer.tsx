@@ -1,50 +1,51 @@
-import { Terminal, Code2, ExternalLink } from 'lucide-react';
+import { PixelComputer, PixelJoystick } from './PixelIcons';
+import { Code2, ExternalLink } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="border-t border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 py-12 transition-colors">
+    <footer className="border-t-2 border-zinc-900 dark:border-zinc-800 bg-zinc-950 text-zinc-100 py-12 transition-colors">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-8 border-b border-zinc-100 dark:border-zinc-900">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-8 border-b border-zinc-800">
           <div>
-            <div className="flex items-center gap-2 mb-1">
-              <div className="w-6 h-6 rounded-md bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 flex items-center justify-center font-bold text-xs">
-                <Terminal className="w-3.5 h-3.5" />
+            <div className="flex items-center gap-2.5 mb-1.5">
+              <div className="w-7 h-7 border border-emerald-400 bg-black text-emerald-400 flex items-center justify-center">
+                <PixelComputer className="w-4 h-4" />
               </div>
-              <span className="font-bold text-sm tracking-tight text-zinc-900 dark:text-zinc-100">
-                VIBE CODER OS
+              <span className="font-pixel text-xs tracking-tight text-white">
+                VIBE CODER OS <span className="text-emerald-400">[16-BIT]</span>
               </span>
             </div>
-            <p className="text-xs text-zinc-500 dark:text-zinc-400">
-              The ultimate noob-to-scale guide for AI-driven software engineering.
+            <p className="font-mono text-xs text-zinc-400">
+              The ultimate 16-bit cyber-arcade tutorial for AI-driven software engineering.
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center gap-6 text-xs font-medium text-zinc-600 dark:text-zinc-400">
-            <a href="#playbook" className="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">
-              Playbook
+          <div className="flex flex-wrap items-center gap-5 font-arcade text-xs text-zinc-400 uppercase">
+            <a href="#playbook" className="hover:text-emerald-400 transition-colors">
+              PLAYBOOK
             </a>
-            <a href="#antigravity" className="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">
-              Antigravity
+            <a href="#antigravity" className="hover:text-emerald-400 transition-colors">
+              ANTIGRAVITY
             </a>
-            <a href="#prompts" className="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">
-              Master Prompts
+            <a href="#prompts" className="hover:text-emerald-400 transition-colors">
+              PROMPTS
             </a>
-            <a href="#stacks" className="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">
-              Tech Stacks
+            <a href="#stacks" className="hover:text-emerald-400 transition-colors">
+              STACKS
             </a>
-            <a href="#hosting" className="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">
-              Hosting
+            <a href="#hosting" className="hover:text-emerald-400 transition-colors">
+              HOSTING
             </a>
-            <a href="#security" className="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">
-              Security
+            <a href="#security" className="hover:text-emerald-400 transition-colors">
+              SECURITY
             </a>
-            <a href="#matchmaker" className="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">
-              Matchmaker
+            <a href="#matchmaker" className="hover:text-emerald-400 transition-colors">
+              MATCHMAKER
             </a>
           </div>
         </div>
 
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500 dark:text-zinc-400">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs text-zinc-500">
           <div>
             Open-source community resource built with Antigravity AI, ag-kit-v2, and Superpowers.
           </div>
@@ -53,11 +54,11 @@ export default function Footer() {
               href="https://github.com/KuyaLoy/ai-workflow-guide-ag"
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-1.5 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors font-medium"
+              className="flex items-center gap-1.5 hover:text-emerald-400 text-zinc-300 transition-colors font-arcade uppercase text-xs"
             >
-              <Code2 className="w-3.5 h-3.5" />
-              <span>GitHub Repository</span>
-              <ExternalLink className="w-3 h-3 text-zinc-400" />
+              <PixelJoystick className="w-3.5 h-3.5 text-emerald-400" />
+              <span>GITHUB REPOSITORY</span>
+              <ExternalLink className="w-3 h-3 ml-0.5 opacity-60" />
             </a>
           </div>
         </div>
