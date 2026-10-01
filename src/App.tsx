@@ -1,4 +1,4 @@
-import { ArrowRight, Bot, Code2, Database, Github, Globe, LayoutTemplate, MessageSquare, Terminal, Zap } from 'lucide-react'
+import { ArrowRight, Bot, Code2, Database, Code, Globe, LayoutTemplate, MessageSquare, Terminal, Zap } from 'lucide-react'
 
 export default function App() {
   return (
@@ -12,7 +12,7 @@ export default function App() {
           </div>
           <div className="flex items-center gap-4 text-sm font-medium text-muted-foreground">
             <a href="https://github.com/KuyaLoy/ai-workflow-guide-ag" target="_blank" rel="noreferrer" className="hover:text-primary transition-colors flex items-center gap-2">
-              <Github className="w-4 h-4" />
+              <Code className="w-4 h-4" />
               Source
             </a>
           </div>
@@ -71,7 +71,7 @@ export default function App() {
 
             <div className="p-6 rounded-xl border border-gray-200 bg-white shadow-sm hover:shadow-md transition-shadow">
               <div className="w-12 h-12 rounded-lg bg-purple-100 text-purple-600 flex items-center justify-center mb-6">
-                <Github className="w-6 h-6" />
+                <Code className="w-6 h-6" />
               </div>
               <h3 className="font-semibold text-xl mb-2">GitHub MCP</h3>
               <p className="text-muted-foreground leading-relaxed text-sm">
